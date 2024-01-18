@@ -6,11 +6,21 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:22:59 by btan              #+#    #+#             */
-/*   Updated: 2024/01/18 20:04:35 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/18 20:15:05 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	count_arr(char	**strs)
+{
+	char	**ptr;
+
+	ptr = strs;
+	while (*strs)
+		strs++;
+	return (strs - ptr);
+}
 
 void	swap(int *lst)
 {
@@ -22,14 +32,9 @@ void	push(int *lst_1, int *lst_2)
 	ft_swap(&lst_1[0], &lst_2[0]);
 }
 
-int	count_arr(char	**strs)
+void	rotate(int *lst, int len)
 {
-	char	**ptr;
-
-	ptr = strs;
-	while (*strs)
-		strs++;
-	return (strs - ptr);
+	ft_swap(&lst[0], &lst[len])
 }
 
 int	*char_to_int(char *str)
