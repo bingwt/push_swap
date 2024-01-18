@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/18 14:51:25 by btan              #+#    #+#             */
-/*   Updated: 2024/01/19 01:31:25 by btan             ###   ########.fr       */
+/*   Created: 2024/01/19 01:33:36 by btan              #+#    #+#             */
+/*   Updated: 2024/01/19 01:37:18 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-#include <libft.h>
+#include "push_swap.h"
 
-typedef struct	s_content
+void	sa(t_list **head_a)
 {
-	int	num;
-}	t_content;
+	swap(head_a);
+	ft_printf("sa\n");
+}
 
-void	swap(t_list **head);
-void	push(t_list **head_a, t_list **head_b);
-void	rotate(t_list **head);
-void	reverse_rotate(t_list **head);
+void	sb(t_list **head_b)
+{
+	swap(head_b);
+	ft_printf("sb\n");
+}
 
-#endif
+void	ss(t_list **head_a, t_list **head_b)
+{
+	swap(head_a);
+	swap(head_b);
+	ft_printf("ss\n");
+}

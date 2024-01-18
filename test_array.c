@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:22:59 by btan              #+#    #+#             */
-/*   Updated: 2024/01/18 20:15:05 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/19 00:23:42 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	push(int *lst_1, int *lst_2)
 
 void	rotate(int *lst, int len)
 {
-	ft_swap(&lst[0], &lst[len])
+	ft_swap(&lst[0], &lst[len]);
 }
 
 int	*char_to_int(char *str)
