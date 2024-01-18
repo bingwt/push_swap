@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:22:59 by btan              #+#    #+#             */
-/*   Updated: 2024/01/18 19:38:25 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/18 20:04:35 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,22 +43,25 @@ int	*char_to_int(char *str)
 	int_arr = ft_calloc(len, sizeof(int *));
 	while (len--)
 		int_arr[len] = ft_atoi(char_arr[len]);
+	free_strs(char_arr);
 	return (int_arr);
 }
 
 void	print_stacks(int *a, int *b)
 {
-	ft_printf("stack_a: {%d, %d}\n", a[0], a[1]);
-	ft_printf("stack_b: {%d, %d}\n", b[0], b[1]);
+	ft_printf("stack_a: {%d, %d, %d}\n", a[0], a[1], a[2]);
+	ft_printf("stack_b: {%d, %d, %d}\n", b[0], b[1], b[2]);
 }
 
 int	main(int argc, char **argv)
 {
 	int	*stack_a;
+	int	len;
 	int	*stack_b;
 
 	stack_a = char_to_int(argv[1]);
-	stack_b = ft_calloc(3, sizeof(int *));
+	len = 3;
+	stack_b = ft_calloc(len, sizeof(int *));
 	print_stacks(stack_a, stack_b);
 }
 //int	main(int argc, char **argv)
