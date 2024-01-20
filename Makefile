@@ -6,10 +6,45 @@
 #    By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/17 19:17:02 by btan              #+#    #+#              #
-#    Updated: 2024/01/19 01:32:04 by btan             ###   ########.fr        #
+#    Updated: 2024/01/20 14:54:15 by btan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = push_swap
+
+INCLUDES = includes
+
+SRCS = srcs/main.c \
+		srcs/push_swap_utils.c \
+		srcs/moves.c \
+		srcs/swap.c \
+		srcs/push.c \
+		srcs/rotate.c \
+		srcs/reverse_rotate.c
+
+CC = cc
+
+CFLAGS = -Wall -Wextra -Werror -g
+
+MLXFLAGS = -lXext -lX11
+
+OBJECTS = $(SRCS:.c=.o)
+
+all: $(NAME)
+
+$(NAME):
+	make -C Libft
+	mv ./Libft/libft.a ./
+	make fclean -C Libft
+	$(CC) $(CFLAGS) $(SRCS) -o $(NAME) -I$(INCLUDES) -ILibft libft.a
+
+clean:
+	rm -rf $(OBJECTS) $(NAME).a libft.a
+
+fclean: clean
+	rm -rf $(NAME)
+
+re: fclean all
 
 test:
-	cc test_linked_list.c moves.c -ILibft libft.a -g
+	cc test_main.c push_swap_utils.c moves.c -ILibft libft.a -g
