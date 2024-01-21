@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:51:25 by btan              #+#    #+#             */
-/*   Updated: 2024/01/20 15:02:26 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/21 17:16:32 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ typedef struct s_content
 
 int		ft_strslen(char **strs);
 int		*strs_to_ints(char **strs);
+
+void	print_stack(t_list *head);
+void	init_stack(t_list **head_a, char **argv);
+int		is_sorted(t_list *head);
 
 void	swap(t_list **head);
 void	push(t_list **head_a, t_list **head_b);

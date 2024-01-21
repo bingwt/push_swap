@@ -6,7 +6,7 @@
 #    By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/17 19:17:02 by btan              #+#    #+#              #
-#    Updated: 2024/01/20 14:54:15 by btan             ###   ########.fr        #
+#    Updated: 2024/01/21 17:16:58 by btan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ INCLUDES = includes
 
 SRCS = srcs/main.c \
 		srcs/push_swap_utils.c \
+		srcs/stacks.c \
 		srcs/moves.c \
 		srcs/swap.c \
 		srcs/push.c \
