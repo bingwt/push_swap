@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:54:02 by btan              #+#    #+#             */
-/*   Updated: 2024/01/21 17:27:53 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/21 17:53:32 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int	main(int argc, char **argv)
 		push(&head_a, &head_b);
 		print_stack(head_a);
 		print_stack(head_b);
-
 		ft_lstclear(&head_a, free);
 		ft_lstclear(&head_b, free);
 	}
