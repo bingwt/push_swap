@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:54:02 by btan              #+#    #+#             */
-/*   Updated: 2024/01/21 22:59:04 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/21 23:42:05 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,31 @@ int	main(int argc, char **argv)
 	t_list	*head_a;
 	t_list	*head_b;
 	char	**list;
+	int		len;
 
 	head_a = NULL;
 	head_b = NULL;
 	if (argc == 2)
 	{
 		list = ft_split(argv[1], ' ');
+		len = ft_strslen(list);
 		init_stack(&head_a, list);
 		free_strs(list);
 	}
 	else
+	{
+		len = ft_strslen(argv) - 1;
 		init_stack(&head_a, ++argv);
+	}
 	if (argc > 1)
 	{
 		print_stack(head_a);
 		print_stack(head_b);
 		ft_printf("%d\n", is_sorted(head_a));
-		sort4(&head_a);
+		if (len == 2)
+			sort2(&head_a);
+		if (len == 3)
+			sort3(&head_a);
 		print_stack(head_a);
 		print_stack(head_b);
 		ft_printf("%d\n", is_sorted(head_a));
