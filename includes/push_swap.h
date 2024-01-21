@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:51:25 by btan              #+#    #+#             */
-/*   Updated: 2024/01/21 17:16:32 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/21 22:58:44 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,9 @@ void	rr(t_list **head_a, t_list **head_b);
 void	rra(t_list **head_a);
 void	rrb(t_list **head_b);
 void	rrr(t_list **head_a, t_list **head_b);
+
+void	sort2(t_list **head);
+void	sort3(t_list **head);
+void	sort4(t_list **head);
 
 #endif

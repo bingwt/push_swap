@@ -6,7 +6,7 @@
 #    By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/17 19:17:02 by btan              #+#    #+#              #
-#    Updated: 2024/01/21 17:16:58 by btan             ###   ########.fr        #
+#    Updated: 2024/01/21 21:46:59 by btan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ SRCS = srcs/main.c \
 		srcs/swap.c \
 		srcs/push.c \
 		srcs/rotate.c \
-		srcs/reverse_rotate.c
+		srcs/reverse_rotate.c \
+		srcs/sort.c
 
 CC = cc
 
