@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:51:25 by btan              #+#    #+#             */
-/*   Updated: 2024/01/22 10:43:34 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/22 17:33:37 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int		ft_strslen(char **strs);
 int		*strs_to_ints(char **strs);
 
 void	print_stack(t_list *head);
+void	print_stacks(t_list *head_a, t_list *head_b);
 void	init_stack(t_list **head_a, char **argv);
 int		is_sorted(t_list *head);
 
