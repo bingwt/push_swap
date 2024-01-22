@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 13:26:08 by btan              #+#    #+#             */
-/*   Updated: 2024/01/21 17:52:45 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 03:16:38 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	*strs_to_ints(char **strs)
 
 	ptr = strs;
 	ints = ft_calloc(ft_strslen(strs), sizeof(int));
+	if (!ints)
+		return (NULL);
 	while (*ptr)
 	{
 		*ints = ft_atoi(*ptr);

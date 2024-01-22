@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:54:02 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 01:22:34 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 03:13:43 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(int argc, char **argv)
 	int		len;
 	char	move[100];
 	int		min;
+	int		max;
 
 	head_a = NULL;
 	head_b = NULL;
@@ -42,7 +43,9 @@ int	main(int argc, char **argv)
 	ft_printf("Inital Stacks:\n");
 	print_stacks(head_a, head_b);
 	min = stack_min(head_a);
+	max = stack_max(head_a);
 	ft_printf("min: %d\n", min);
+	ft_printf("max: %d\n", max);
 	while(1)
 	{
 		ft_printf("Enter move: ");
@@ -73,6 +76,11 @@ int	main(int argc, char **argv)
 			sort2(&head_a);
 		if (!strncmp(move, "sort3", 5))
 			sort3(&head_a);
+		if (!strncmp(move, "sort4", 5))
+			sort4(&head_a, &head_b);
+		if (!strncmp(move, "sort5", 5))
+			sort5(&head_a, &head_b);
+		print_stacks(head_a, head_b);
 		print_stacks(head_a, head_b);
 	}
 	ft_lstclear(&head_a, free);

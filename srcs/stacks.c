@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:04:49 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 03:02:22 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 03:15:33 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ void	init_stack(t_list **head_a, char **argv)
 	while (len--)
 	{
 		content = ft_calloc(1, sizeof(t_content));
+		if (!content)
+			return ;
 		content->num = *ints;
 		node = ft_lstnew(content);
 		ft_lstadd_back(head_a, node);
