@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:54:02 by btan              #+#    #+#             */
-/*   Updated: 2024/01/22 21:07:38 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 00:01:06 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	main(int argc, char **argv)
 			ra(&head_a);
 		if (!strncmp(move, "rb", 2))
 			rb(&head_b);
-		if (!strncmp(move, "rr", 2))
+		if (!strncmp(move, "rr", 2) && !move[2])
 			rr(&head_a, &head_b);
 		if (!strncmp(move, "rra", 3))
 			rra(&head_a);
@@ -69,6 +69,11 @@ int	main(int argc, char **argv)
 			rrb(&head_b);
 		if (!strncmp(move, "rrr", 3))
 			rrr(&head_a, &head_b);
+		if (!strncmp(move, "sort2", 5))
+			//ft_printf("test\n");
+			sort2(&head_a);
+		if (!strncmp(move, "sort3", 5))
+			sort3(&head_a);
 		print_stacks(head_a, head_b);
 	}
 	ft_lstclear(&head_a, free);
