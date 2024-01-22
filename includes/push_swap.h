@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:51:25 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 01:26:04 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 01:40:58 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ int		stack_max(t_list *head);
 void	sort2(t_list **head);
 void	sort3(t_list **head);
 void	sort4(t_list **head_a, t_list **head_b);
+void	sort5(t_list **head_a, t_list **head_b);
 
 #endif

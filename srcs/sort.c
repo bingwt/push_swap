@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 21:24:53 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 01:26:21 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 02:04:59 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	sort4(t_list **head_a, t_list **head_b)
 	c = ((t_content *)(*head_a)->next->next->content)->num;
 	d = ((t_content *)(*head_a)->next->next->next->content)->num;
 	min = stack_min(*head_a);
-	if (d ==min)
+	if (d == min)
 		rra(head_a);
 	if (c == min)
 		ra(head_a);
@@ -62,5 +62,33 @@ void	sort4(t_list **head_a, t_list **head_b)
 		sa(head_a);
 	pb(head_a, head_b);
 	sort3(head_a);
+	pa(head_b, head_a);
+}
+
+void	sort5(t_list **head_a, t_list **head_b)
+{
+	int	b;
+	int	c;
+	int	d;
+	int	e;
+	int	min;
+
+	b = ((t_content *)(*head_a)->next->content)->num;
+	c = ((t_content *)(*head_a)->next->next->content)->num;
+	d = ((t_content *)(*head_a)->next->next->next->content)->num;
+	e = ((t_content *)(*head_a)->next->next->next->next->content)->num;
+	min = stack_min(*head_a);
+	if (d == min)
+		rra(head_a);
+	e = ((t_content *)(*head_a)->next->next->next->next->content)->num;
+	if (e == min)
+		rra(head_a);
+	if (c == min)
+		ra(head_a);
+	b = ((t_content *)(*head_a)->next->content)->num;
+	if (b == min)
+		sa(head_a);
+	pb(head_a, head_b);
+	sort4(head_a, head_b);
 	pa(head_b, head_a);
 }
