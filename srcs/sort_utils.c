@@ -6,15 +6,15 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 20:30:43 by btan              #+#    #+#             */
-/*   Updated: 2024/01/22 21:07:23 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 01:08:36 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_stack_min(t_list *head)
+int	stack_min(t_list *head)
 {
-	int	min;
+	int			min;
 	t_content	*content;
 
 	content = head->content;
@@ -28,4 +28,3 @@ int	is_stack_min(t_list *head)
 	}
 	return (min);
 }
-

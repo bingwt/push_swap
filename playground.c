@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:54:02 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 00:01:06 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 01:22:34 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 	system("clear");
 	ft_printf("Inital Stacks:\n");
 	print_stacks(head_a, head_b);
-	min = is_stack_min(head_a);
+	min = stack_min(head_a);
 	ft_printf("min: %d\n", min);
 	while(1)
 	{
@@ -70,7 +70,6 @@ int	main(int argc, char **argv)
 		if (!strncmp(move, "rrr", 3))
 			rrr(&head_a, &head_b);
 		if (!strncmp(move, "sort2", 5))
-			//ft_printf("test\n");
 			sort2(&head_a);
 		if (!strncmp(move, "sort3", 5))
 			sort3(&head_a);

@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 21:24:53 by btan              #+#    #+#             */
-/*   Updated: 2024/01/22 22:40:23 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 01:26:21 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,23 @@ void	sort3(t_list **head)
 
 void	sort4(t_list **head_a, t_list **head_b)
 {
-	int	a;
 	int	b;
 	int	c;
 	int	d;
+	int	min;
 
-	a = ((t_content *)(*head_a)->content)->num;
 	b = ((t_content *)(*head_a)->next->content)->num;
 	c = ((t_content *)(*head_a)->next->next->content)->num;
-	d = ((t_content *)(*head_b)->content)->num;
+	d = ((t_content *)(*head_a)->next->next->next->content)->num;
+	min = stack_min(*head_a);
+	if (d ==min)
+		rra(head_a);
+	if (c == min)
+		ra(head_a);
+	b = ((t_content *)(*head_a)->next->content)->num;
+	if (b == min)
+		sa(head_a);
+	pb(head_a, head_b);
+	sort3(head_a);
+	pa(head_b, head_a);
 }
