@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 21:24:53 by btan              #+#    #+#             */
-/*   Updated: 2024/01/22 12:44:22 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/22 12:55:07 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	sort3(t_list **head)
 		ra(head);
 	else if (a < b && a > c)
 		rra(head);
-	else if (!is_sorted(*head))
+	else
 		sa(head);
 	if (!is_sorted(*head))
 		sort3(head);
