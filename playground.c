@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:54:02 by btan              #+#    #+#             */
-/*   Updated: 2024/01/22 20:10:24 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/22 21:07:38 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(int argc, char **argv)
 	char	**list;
 	int		len;
 	char	move[100];
+	int		min;
 
 	head_a = NULL;
 	head_b = NULL;
@@ -40,6 +41,8 @@ int	main(int argc, char **argv)
 	system("clear");
 	ft_printf("Inital Stacks:\n");
 	print_stacks(head_a, head_b);
+	min = is_stack_min(head_a);
+	ft_printf("min: %d\n", min);
 	while(1)
 	{
 		ft_printf("Enter move: ");
