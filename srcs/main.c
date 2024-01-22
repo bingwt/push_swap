@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:54:02 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 01:53:48 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 02:59:30 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ int	main(int argc, char **argv)
 		len = ft_strslen(argv) - 1;
 		init_stack(&head_a, ++argv);
 	}
-//	print_stacks(head_a, head_b);
+	init_rank(&head_a);
+	print_stacks(head_a, head_b);
+	print_ranks(head_a, head_b);
 	if (argc > 1 && !is_sorted(head_a))
 	{
 		if (len == 2)
@@ -45,7 +47,8 @@ int	main(int argc, char **argv)
 		if (len == 5)
 			sort5(&head_a, &head_b);
 	}
-//	print_stacks(head_a, head_b);
+	print_stacks(head_a, head_b);
+	print_ranks(head_a, head_b);
 	if (is_sorted(head_a))
 		ft_printf("OK\n");
 	ft_lstclear(&head_a, free);
