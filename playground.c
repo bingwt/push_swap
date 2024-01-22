@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:54:02 by btan              #+#    #+#             */
-/*   Updated: 2024/01/22 18:02:44 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/22 20:10:24 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,26 @@ int	main(int argc, char **argv)
 		scanf("%s", move);
 		if (!strncmp(move, "sa", 2))
 			sa(&head_a);
-		else if (!strncmp(move, "ra", 2))
+		if (!strncmp(move, "sb", 2))
+			sb(&head_b);
+		if (!strncmp(move, "ss", 2))
+			ss(&head_a, &head_b);
+		if (!strncmp(move, "pa", 2))
+			pa(&head_b, &head_a);
+		if (!strncmp(move, "pb", 2))
+			pb(&head_a, &head_b);
+		if (!strncmp(move, "ra", 2))
 			ra(&head_a);
+		if (!strncmp(move, "rb", 2))
+			rb(&head_b);
+		if (!strncmp(move, "rr", 2))
+			rr(&head_a, &head_b);
+		if (!strncmp(move, "rra", 3))
+			rra(&head_a);
+		if (!strncmp(move, "rrb", 3))
+			rrb(&head_b);
+		if (!strncmp(move, "rrr", 3))
+			rrr(&head_a, &head_b);
 		print_stacks(head_a, head_b);
 	}
 	ft_lstclear(&head_a, free);
