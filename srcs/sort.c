@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 21:24:53 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 02:04:59 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 13:44:14 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,3 +92,40 @@ void	sort5(t_list **head_a, t_list **head_b)
 	sort4(head_a, head_b);
 	pa(head_b, head_a);
 }
+
+void	sort(t_list **head_a, t_list **head_b)
+{
+	t_list		*current;
+	t_content	*current_content;
+	int			len;
+	int			min;
+	int			mid;
+	int			midpoint;
+
+	current = *head_a;
+	current_content = current->content;;
+	len = ft_lstsize(*head_a);
+	min = stack_min(*head_a);
+	mid = stack_mid(*head_a);
+	midpoint = 0;
+	while (current && len > 5)
+	{
+		if (((t_content *)(*head_a)->content)->num == min)
+			ft_printf("push a->b");
+		if (current_content->num == mid)
+			midpoint++;
+		if (current_content->num == min && !midpoint)
+			ft_printf("left");
+		if (current_content->num == min && midpoint)
+			ft_printf("right");
+		current = (*head_a)->next;
+	}
+	if (len > 5)
+		sort(head_a, head_b);
+	if (len == 5)
+		sort5(head_a, head_b);
+	if(len == 5 && is_sorted(*head_a))
+		while (ft_lstsize(*head_b))
+			ft_printf("push b->a");
+}
+
