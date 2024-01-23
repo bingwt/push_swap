@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 21:24:53 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 19:52:07 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 21:04:58 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,48 +96,30 @@ void	sort5(t_list **head_a, t_list **head_b)
 void	sort(t_list **head_a, t_list **head_b)
 {
 	t_list		*current;
-	t_content	*current_content;
 	int			len;
 	int			min;
 	int			mid;
 	int			midpoint;
 
 	current = *head_a;
-	current_content = current->content;;
 	len = ft_lstsize(*head_a);
 	min = stack_min(*head_a);
 	mid = stack_mid(*head_a);
 	midpoint = 0;
 	while (current)
 	{
-		print_stacks(*head_a, *head_b);
-		//if (current_content->rank == min)
+		if (((t_content *)current->content)->rank == mid && !midpoint)
+			midpoint++;
+		if (((t_content *)current->content)->rank == min && !midpoint)
+			ra(head_a);
+		if (((t_content *)current->content)->rank == min && midpoint)
+			rra(head_a);
 		if (((t_content *)(*head_a)->content)->rank == min)
 		{
-			//ft_printf("push a->b");
 			pb(head_a, head_b);
 			break ;
 		}
-		if (current_content->rank == mid)
-			midpoint++;
-		if (current_content->rank == min && !midpoint)
-		{
-			ft_printf("left");
-			rra(head_a);
-			current = *head_a;
-			break ;
-		}
-		if (current_content->rank == min && midpoint)
-		{
-			ft_printf("right");
-			ra(head_a);
-			current = *head_a;
-			break ;
-		}
 		current = current->next;
-		if (current)
-			current_content = current->content;;
-		print_stacks(*head_a, *head_b);
 	}
 	if (len > 5)
 		sort(head_a, head_b);
@@ -145,7 +127,6 @@ void	sort(t_list **head_a, t_list **head_b)
 		sort5(head_a, head_b);
 	if(len == 5 && is_sorted(*head_a))
 		while (ft_lstsize(*head_b))
-			//ft_printf("push b->a");
 			pa(head_b, head_a);
 }
 
