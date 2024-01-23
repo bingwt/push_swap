@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:54:02 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 13:12:06 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 19:16:51 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,11 @@ int	main(int argc, char **argv)
 		len = ft_strslen(argv) - 1;
 		init_stack(&head_a, ++argv);
 	}
+	init_rank(&head_a);
 	system("clear");
 	ft_printf("Inital Stacks:\n");
 	print_stacks(head_a, head_b);
+	print_ranks(head_a, head_b);
 	min = stack_min(head_a);
 	max = stack_max(head_a);
 	mid = stack_mid(head_a);

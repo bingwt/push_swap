@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:04:49 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 03:15:33 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 19:28:56 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,8 +113,8 @@ int	is_sorted(t_list *head)
 	{
 		delta = 0;
 		if (node->next)
-			delta = ((t_content *) node->content)->num - \
-					((t_content *) node->next->content)->num;
+			delta = ((t_content *) node->content)->rank - \
+					((t_content *) node->next->content)->rank;
 		if (delta > 0)
 			return (0);
 		node = node->next;

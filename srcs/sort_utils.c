@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 20:30:43 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 13:17:54 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 19:28:24 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ int	stack_min(t_list *head)
 	int			min;
 
 	content = head->content;
-	min = content->num;
+	min = content->rank;
 	while (head)
 	{
 		content = head->content;
-		if (content->num < min)
-			min = content->num;
+		if (content->rank < min)
+			min = content->rank;
 		head = head->next;
 	}
 	return (min);
@@ -35,12 +35,12 @@ int	stack_max(t_list *head)
 	int			max;
 
 	content = head->content;
-	max = content->num;
+	max = content->rank;
 	while (head)
 	{
 		content = head->content;
-		if (content->num > max)
-			max = content->num;
+		if (content->rank > max)
+			max = content->rank;
 		head = head->next;
 	}
 	return (max);
@@ -55,5 +55,5 @@ int	stack_mid(t_list *head)
 	while (mid--)
 		head = head->next;
 	content = head->content;
-	return (content->num);
+	return (content->rank);
 }

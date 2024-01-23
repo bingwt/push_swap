@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:54:02 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 13:40:26 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 19:25:04 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(int argc, char **argv)
 			sort4(&head_a, &head_b);
 		if (len == 5)
 			sort5(&head_a, &head_b);
-		else
+		if (len > 5)
 			sort(&head_a, &head_b);
 	}
 //	print_stacks(head_a, head_b);

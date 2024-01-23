@@ -6,11 +6,12 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 13:26:08 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 18:21:05 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 19:12:21 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
 
 long	ft_atol(const char *str)
 {
