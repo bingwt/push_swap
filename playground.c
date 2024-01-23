@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:54:02 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 19:16:51 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 23:04:03 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,9 @@ int	main(int argc, char **argv)
 			sort4(&head_a, &head_b);
 		if (!strncmp(move, "sort5", 5))
 			sort5(&head_a, &head_b);
-		print_stacks(head_a, head_b);
-		print_stacks(head_a, head_b);
+		if (!strncmp(move, "sort", 4))
+			sort(&head_a, &head_b);
+		print_ranks(head_a, head_b);
 	}
 	ft_lstclear(&head_a, free);
 	ft_lstclear(&head_b, free);
