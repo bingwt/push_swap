@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 21:24:53 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 21:04:58 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 22:46:16 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,7 @@ void	sort(t_list **head_a, t_list **head_b)
 		if (((t_content *)(*head_a)->content)->rank == min)
 		{
 			pb(head_a, head_b);
+			len--;
 			break ;
 		}
 		current = current->next;
