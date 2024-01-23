@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:51:25 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 13:40:45 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 18:21:15 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct s_content
 	int	rank;
 }	t_content;
 
+long	ft_atol(const char *str);
 int		ft_strslen(char **strs);
 int		*strs_to_ints(char **strs);
 
