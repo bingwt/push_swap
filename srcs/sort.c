@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 21:24:53 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 13:44:14 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/23 16:22:38 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,17 +108,36 @@ void	sort(t_list **head_a, t_list **head_b)
 	min = stack_min(*head_a);
 	mid = stack_mid(*head_a);
 	midpoint = 0;
-	while (current && len > 5)
+	while (current)
 	{
+		print_stacks(*head_a, *head_b);
+		//if (current_content->num == min)
 		if (((t_content *)(*head_a)->content)->num == min)
-			ft_printf("push a->b");
+		{
+			//ft_printf("push a->b");
+			pb(head_a, head_b);
+			break ;
+		}
 		if (current_content->num == mid)
 			midpoint++;
 		if (current_content->num == min && !midpoint)
+		{
 			ft_printf("left");
+			rra(head_a);
+			current = *head_a;
+			break ;
+		}
 		if (current_content->num == min && midpoint)
+		{
 			ft_printf("right");
-		current = (*head_a)->next;
+			ra(head_a);
+			current = *head_a;
+			break ;
+		}
+		current = current->next;
+		if (current)
+			current_content = current->content;;
+		print_stacks(*head_a, *head_b);
 	}
 	if (len > 5)
 		sort(head_a, head_b);
@@ -126,6 +145,7 @@ void	sort(t_list **head_a, t_list **head_b)
 		sort5(head_a, head_b);
 	if(len == 5 && is_sorted(*head_a))
 		while (ft_lstsize(*head_b))
-			ft_printf("push b->a");
+			//ft_printf("push b->a");
+			pa(head_b, head_a);
 }
 
