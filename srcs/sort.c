@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 21:24:53 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 22:46:16 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/24 17:43:15 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	sort5(t_list **head_a, t_list **head_b)
 	pa(head_b, head_a);
 }
 
-void	sort(t_list **head_a, t_list **head_b)
+void	simple_sort(t_list **head_a, t_list **head_b)
 {
 	t_list		*current;
 	int			len;
@@ -129,5 +129,20 @@ void	sort(t_list **head_a, t_list **head_b)
 	if(len == 5 && is_sorted(*head_a))
 		while (ft_lstsize(*head_b))
 			pa(head_b, head_a);
+}
+
+void	sort(t_list **head_a, t_list **head_b)
+{
+	t_list	*current;
+	t_list	*b;
+
+	current = *head_a;
+	b = *head_b;
+	pb(head_a, head_b);
+	if (((t_content *)current->content)->rank < ((t_content *)b->content)->rank)
+	{
+		pb(head_a, head_b);
+		sort2(head_b);
+	}
 }
 
