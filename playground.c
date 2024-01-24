@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:54:02 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 23:04:03 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/24 22:58:21 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(int argc, char **argv)
 	int		min;
 	int		max;
 	int		mid;
+	int		moves = 0;
 
 	head_a = NULL;
 	head_b = NULL;
@@ -88,6 +89,10 @@ int	main(int argc, char **argv)
 		if (!strncmp(move, "sort", 4))
 			sort(&head_a, &head_b);
 		print_ranks(head_a, head_b);
+		if (!strncmp(move, "moves", 5))
+			ft_printf("Moves: %d\n", moves);
+		else
+			moves++;
 	}
 	ft_lstclear(&head_a, free);
 	ft_lstclear(&head_b, free);

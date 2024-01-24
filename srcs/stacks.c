@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:04:49 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 19:28:56 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/25 00:33:46 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,22 @@ int	is_sorted(t_list *head)
 					((t_content *) node->next->content)->rank;
 		if (delta > 0)
 			return (0);
+		node = node->next;
+	}
+	return (1);
+}
+
+int	is_sorted_ordered(t_list *head)
+{
+	t_list	*node;
+
+	node = head;
+	while (node)
+	{
+		if (node->next)
+			if (((t_content *) node->content)->rank - \
+				((t_content *) node->next->content)->rank != 1)
+				return (0);
 		node = node->next;
 	}
 	return (1);

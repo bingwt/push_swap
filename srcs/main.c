@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:54:02 by btan              #+#    #+#             */
-/*   Updated: 2024/01/23 21:07:12 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/25 01:10:54 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ int	main(int argc, char **argv)
 			sort(&head_a, &head_b);
 	}
 //	print_stacks(head_a, head_b);
-//	print_ranks(head_a, head_b);
+	// print_ranks(head_a, head_b);
 	if (is_sorted(head_a))
-		//ft_printf("OK\n");
+		// ft_printf("OK\n");
 	ft_lstclear(&head_a, free);
 	ft_lstclear(&head_b, free);
 	return (0);
