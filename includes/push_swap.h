@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:51:25 by btan              #+#    #+#             */
-/*   Updated: 2024/01/25 00:51:32 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/26 02:37:24 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ typedef struct s_content
 {
 	int	num;
 	int	rank;
+	int	pos;
 }	t_content;
 
 long	ft_atol(const char *str);
@@ -26,8 +27,10 @@ int		*strs_to_ints(char **strs);
 
 void	print_stacks(t_list *head_a, t_list *head_b);
 void	print_ranks(t_list *head_a, t_list *head_b);
+void	print_pos(t_list *head_a, t_list *head_b);
 void	init_stack(t_list **head_a, char **argv);
 void	init_rank(t_list **head);
+void	init_pos(t_list **head);
 int		is_sorted(t_list *head);
 int	is_sorted_ordered(t_list *head);
 
@@ -59,6 +62,7 @@ void	sort2(t_list **head);
 void	sort3(t_list **head);
 void	sort4(t_list **head_a, t_list **head_b);
 void	sort5(t_list **head_a, t_list **head_b);
+void	simple_sort(t_list **head_a, t_list **head_b);
 void	sort(t_list **head_a, t_list **head_b);
 
 #endif
