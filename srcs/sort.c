@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 21:24:53 by btan              #+#    #+#             */
-/*   Updated: 2024/01/26 02:29:25 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/26 14:17:57 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,26 @@ void	simple_sort(t_list **head_a, t_list **head_b)
 			pa(head_b, head_a);
 }
 
+void	split_stack(t_list **head_a, t_list **head_b)
+{
+	int	len;
+	int	midpoint;
+
+	len = ft_lstsize(*head_a);
+	midpoint = len / 2;
+	while(len != midpoint)
+	{
+		pb(head_a, head_b);
+		len--;
+	}
+}
+
 void	sort(t_list **head_a, t_list **head_b)
 {
-	simple_sort(head_a, head_b);
+	split_stack(head_a, head_b);
+	// simple_sort(head_a, head_b);
+	// while (ft_lstsize(*head_a) > 3)
+	// {
+	// 	pb(head_a, head_b);
+	// }
 }
