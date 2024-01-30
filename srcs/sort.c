@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 21:24:53 by btan              #+#    #+#             */
-/*   Updated: 2024/01/30 13:32:22 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/31 01:42:08 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -262,30 +262,42 @@ int check_bit(int num, int pos)
 void	radix_sort(t_list **head_a, t_list **head_b)
 {
     int	max_bit;
+	int	bit;
     int	len;
 
-    max_bit = 2;
-    while (max_bit--)
+    max_bit = max_bits(*head_a);
+	bit = 0;
+    while (bit <= max_bit)
     {
 		len = ft_lstsize(*head_a);
         while (len--)
 		{
-			if (check_bit(((t_content *)(*head_a)->content)->rank, max_bit + 1))
+			if (!check_bit(((t_content *)(*head_a)->content)->rank, bit))
 				pb(head_a, head_b);
 			else
 				ra(head_a);
 		}
-		// while (ft_lstsize(*head_b))
-		// 	pa(head_b, head_a);
+		len = ft_lstsize(*head_b);
+        while (len--)
+            pa(head_b, head_a);
+		bit++;
     }
 }
 
 void	sort(t_list **head_a, t_list **head_b)
 {
-	// if (ft_lstsize(*head_a) <= 100 )
-	// 	chunk_sort(head_a, head_b);
-	// else
-		// radix_sort(head_a, head_b);
-		// chunk_sort(head_a, head_b);
-		cheapest_to_topa(head_a);
+	if (ft_lstsize(*head_a) == 2)
+		sort2(head_a);
+	if (ft_lstsize(*head_a) == 3)
+		sort3(head_a);
+	if (ft_lstsize(*head_a) == 4)
+		sort4(head_a, head_b);
+	if (ft_lstsize(*head_a) == 5)
+		sort5(head_a, head_b);
+	if (ft_lstsize(*head_a) <= 11)
+		simple_sort(head_a, head_b);
+	if (ft_lstsize(*head_a) <= 250)
+		chunk_sort(head_a, head_b);
+	if (ft_lstsize(*head_a) > 250)
+		radix_sort(head_a, head_b);
 }
