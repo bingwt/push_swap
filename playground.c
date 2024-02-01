@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:54:02 by btan              #+#    #+#             */
-/*   Updated: 2024/01/30 23:49:20 by btan             ###   ########.fr       */
+/*   Updated: 2024/01/31 14:52:48 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,11 @@ int	main(int argc, char **argv)
 	}
 	init_rank(&head_a);
 	init_pos(&head_a);
-	init_cost(&head_a);
 	system("clear");
 	ft_printf("Inital Stacks:\n");
 	// print_stacks(head_a, head_b);
 	print_ranks(head_a, head_b);
 	print_pos(head_a, head_b);
-	print_cost(head_a, head_b);
 	min = stack_min(head_a);
 	max = stack_max(head_a);
 	mid = stack_mid(head_a);
@@ -90,12 +88,11 @@ int	main(int argc, char **argv)
 			sort4(&head_a, &head_b);
 		if (!strncmp(move, "sort5", 5))
 			sort5(&head_a, &head_b);
-		if (!strncmp(move, "simple", 6))
-			simple_sort(&head_a, &head_b);
+		// if (!strncmp(move, "simple", 6))
+		// 	simple_sort(&head_a, &head_b);
 		if (!strncmp(move, "sort", 4) && !move[4])
 			sort(&head_a, &head_b);
 		init_pos(&head_a);
-		init_cost(&head_a);
 		// print_stacks(head_a, head_b);
 		print_ranks(head_a, head_b);
 		// print_pos(head_a, head_b);

@@ -6,54 +6,101 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:54:02 by btan              #+#    #+#             */
-/*   Updated: 2024/01/31 01:42:59 by btan             ###   ########.fr       */
+/*   Updated: 2024/02/01 13:27:08 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	is_unique(t_list *head)
+{
+	int	len;
+	int	seq_sum;
+	int	sum;
+
+	len = ft_lstsize(head);
+	seq_sum = (len * (1 + len)) / 2;
+	sum = 0;
+	while (head)
+	{
+		sum += ((t_content *)head->content)->rank;
+		head = head->next;
+	}
+	if (sum == seq_sum)
+		return (1);
+	return (0);
+}
+
+static int	check_sign(char **argv, int argc, int i)
+{
+	if (!ft_isdigit(argv[argc][i]) && argv[argc][i] != '-' && \
+	argv[argc][i] != '+' && argv[argc][i] != ' ')
+		return (1);
+	if (ft_isdigit(argv[argc][i]) && \
+	(argv[argc][i + 1] == '+' || argv[argc][i + 1] == '-'))
+		return (1);
+	if ((argv[argc][i] == '+' || argv[argc][i] == '-') && \
+	(argv[argc][i + 1] == '+' || argv[argc][i + 1] == '-'))
+		return (1);
+	return (0);
+}
+
+static int	check_input(int argc, char **argv)
+{
+	int	i;
+
+	i = 0;
+	while (++i < argc)
+		if (argc > 2 && ft_strchr(argv[i], ' '))
+			return (1);
+	while (--argc)
+	{
+		i = 0;
+		if (argc > 2 && ft_strchr(argv[i], ' '))
+			return (1);
+		if (!ft_strlen(argv[argc]))
+			return (1);
+		while (argv[argc][i])
+		{
+			if (check_sign(argv, argc, i))
+				return (1);
+			i++;
+		}
+	}
+	return (0);
+}
+
+static void	input_error(t_list **head)
+{
+	if (head)
+		ft_lstclear(head, free);
+	ft_printf("Error\n");
+	exit(1);
+}
 
 int	main(int argc, char **argv)
 {
 	t_list	*head_a;
 	t_list	*head_b;
 	char	**list;
-	int		len;
 
+	if (check_input(argc, argv))
+		input_error(NULL);
 	head_a = NULL;
 	head_b = NULL;
 	if (argc == 2)
 	{
 		list = ft_split(argv[1], ' ');
-		len = ft_strslen(list);
 		init_stack(&head_a, list);
 		free_strs(list);
 	}
 	else
-	{
-		len = ft_strslen(argv) - 1;
 		init_stack(&head_a, ++argv);
-	}
 	init_rank(&head_a);
-//	print_stacks(head_a, head_b);
-//	print_ranks(head_a, head_b);
+	if (!is_unique(head_a))
+		input_error(&head_a);
 	if (argc > 1 && !is_sorted(head_a))
-	{
-		if (len == 2)
-			sort2(&head_a);
-		if (len == 3)
-			sort3(&head_a);
-		if (len == 4)
-			sort4(&head_a, &head_b);
-		if (len == 5)
-			sort5(&head_a, &head_b);
-		if (len > 5)
-			sort(&head_a, &head_b);
-	}
-//	print_stacks(head_a, head_b);
-	// print_ranks(head_a, head_b);
-	if (is_sorted(head_a))
-		// ft_printf("OK\n");
+		sort(&head_a, &head_b);
 	ft_lstclear(&head_a, free);
-	ft_lstclear(&head_b, free);
 	return (0);
 }

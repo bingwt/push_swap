@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:04:49 by btan              #+#    #+#             */
-/*   Updated: 2024/01/31 00:00:22 by btan             ###   ########.fr       */
+/*   Updated: 2024/02/01 12:23:17 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ void	init_stack(t_list **head_a, char **argv)
 
 	len = ft_strslen(argv);
 	ints = strs_to_ints(argv);
+	if (!ints)
+	{
+		ft_printf("Error\n");
+		free_strs(argv);
+		exit(1);
+	}
 	while (len--)
 	{
 		content = ft_calloc(1, sizeof(t_content));
@@ -68,21 +74,6 @@ void	init_pos(t_list **head)
 	{
 		((t_content *)node->content)->pos = pos;
 		pos++;
-		node = node->next;
-	}
-}
-
-void	init_cost(t_list **head)
-{
-	t_list	*node;
-	int		cost;
-
-	node = *head;
-	while (node)
-	{
-		cost = ((t_content *)node->content)->pos - \
-				((t_content *)node->content)->rank;
-		((t_content *)node->content)->cost = cost;
 		node = node->next;
 	}
 }
