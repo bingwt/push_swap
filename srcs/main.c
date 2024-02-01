@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:54:02 by btan              #+#    #+#             */
-/*   Updated: 2024/02/01 13:27:08 by btan             ###   ########.fr       */
+/*   Updated: 2024/02/01 17:05:40 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,11 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		list = ft_split(argv[1], ' ');
-		init_stack(&head_a, list);
+		init_stack(&head_a, argc, list);
 		free_strs(list);
 	}
 	else
-		init_stack(&head_a, ++argv);
+		init_stack(&head_a, argc, ++argv);
 	init_rank(&head_a);
 	if (!is_unique(head_a))
 		input_error(&head_a);

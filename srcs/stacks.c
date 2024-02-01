@@ -6,13 +6,13 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:04:49 by btan              #+#    #+#             */
-/*   Updated: 2024/02/01 12:23:17 by btan             ###   ########.fr       */
+/*   Updated: 2024/02/01 17:07:18 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_stack(t_list **head_a, char **argv)
+void	init_stack(t_list **head_a, int argc, char **argv)
 {
 	int			len;
 	int			*ints;
@@ -24,7 +24,8 @@ void	init_stack(t_list **head_a, char **argv)
 	if (!ints)
 	{
 		ft_printf("Error\n");
-		free_strs(argv);
+		if (argc == 2)
+			free_strs(argv);
 		exit(1);
 	}
 	while (len--)
