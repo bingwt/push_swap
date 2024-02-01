@@ -6,7 +6,7 @@
 /*   By: btan <btan@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 01:48:11 by btan              #+#    #+#             */
-/*   Updated: 2024/01/31 01:52:22 by btan             ###   ########.fr       */
+/*   Updated: 2024/02/01 15:18:00 by btan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	radix_sort(t_list **head_a, t_list **head_b)
 	int	len;
 
 	max_bit = max_bits(*head_a);
-	bit = 0;
+	bit = 1;
 	while (bit <= max_bit)
 	{
 		len = ft_lstsize(*head_a);
